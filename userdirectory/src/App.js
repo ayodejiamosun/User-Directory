@@ -7,8 +7,7 @@ import employees from "./employee.json";
 class App extends Component {
   state = {
     employees,
-    search:"",
-    name:"term"
+    search:""
   };
 
   removeEmployee = id => {
@@ -16,28 +15,39 @@ class App extends Component {
     this.setState({ employees });
   };
 
-  searchByName = name => {
-    const search = this.state.employees.filter(employee => employee.name !== name);
-    this.setState({ search });
+  searchByName = e => {
+    e.preventDefault();
+    console.log(this.state.search);
+    const search = this.state.employees.filter(employee => employee.name === this.state.search);
+    this.setState({ 
+      employees: search });
     console.log(search);
   }
   handleInputChange = event => {
+    console.log(this.state.search);
     const name = event.target.name;
     const value = event.target.value;
     this.setState({
       [name]: value
     });
   };
-  handleSortingByname= () => {
-    console.log("hey")
+  handleSortingByName= () => {
+    const prevEmployees = this.state.employees
+    prevEmployees.sort((a, b) => (a.name > b.name) ? 1 : -1);
+    console.log(prevEmployees);
+    this.setState({
+      employees: prevEmployees
+    })
   }
 
   render() {
     return (
-      <Wrapper
+      <Wrapper searchByName={this.searchByName}
+      handleInputChange={this.handleInputChange}
+      search={this.state.search}
       >
         <Title>Employee List</Title>
-        {this.state.employees.map(employee => (
+        {this.state.employees.sort((a,b) => {return a.name - b.name}).map(employee => (
           <EmployeeCard
             removeEmployee={this.removeEmployee}
             id={employee.id}
@@ -48,7 +58,7 @@ class App extends Component {
             email={employee.email}
           />
         ))}
-          <button className="inline-block" onClick={this.handleSortingByname}>SortingByName</button>
+          <button className="inline-block" onClick={this.handleSortingByName}>Sorting By Name</button>
       </Wrapper>
     );
   }
