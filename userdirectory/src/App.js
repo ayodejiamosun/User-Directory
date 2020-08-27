@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import FriendCard from "./components/EmployeeCard";
+import EmployeeCard from "./components/EmployeeCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
-import employees from "./Employee.json";
+import employees from "./employee.json";
 
 class App extends Component {
   state = {
@@ -29,16 +29,16 @@ class App extends Component {
     });
   };
   handleSortingByname= () => {
-
+    console.log("hey")
   }
 
   render() {
     return (
       <Wrapper
       >
-        <Title>Friends List</Title>
+        <Title>Employee List</Title>
         {this.state.employees.map(employee => (
-          <FriendCard
+          <EmployeeCard
             removeEmployee={this.removeEmployee}
             id={employee.id}
             key={employee.id}
@@ -46,7 +46,6 @@ class App extends Component {
             image={employee.image}
             role={employee.role}
             email={employee.email}
-            phone={employee.phone}
           />
         ))}
           <button className="inline-block" onClick={this.handleSortingByname}>SortingByName</button>
@@ -54,7 +53,5 @@ class App extends Component {
     );
   }
 }
-
-export default App;
 
 export default App;

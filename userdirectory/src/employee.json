@@ -4,7 +4,6 @@
       "name": "Kanye West",
       "image": "https://picsum.photos/200",
       "role": "CEO",
-      "phone": "678-999-8212",
       "email": "kanyewest@kanye.com" 
     },
     {
@@ -12,7 +11,6 @@
       "name": "Kim Kardashian",
       "image": "https://picsum.photos/200",
       "role": "CFO",
-      "phone": "678-999-8212",
       "email": "kimkardashian@kanye.com" 
     },
     {
@@ -20,7 +18,6 @@
       "name": "North West",
       "image": "https://picsum.photos/200",
       "role": "Regional Manager",
-      "phone": "678-999-8212",
       "email": "northwest@kanye.com" 
     },
     {
@@ -28,7 +25,6 @@
       "name": "Saint West",
       "image": "https://picsum.photos/200",
       "role": "Head of Security",
-      "phone": "678-999-8212",
       "email": "saintwest@kanye.com" 
     },
     {
@@ -36,7 +32,6 @@
       "name": "Chicago West",
       "image": "https://picsum.photos/200",
       "role": "Social Media Intern",
-      "phone": "678-999-8212",
       "email": "chicagowest@kanye.com" 
     },
     {
@@ -44,7 +39,6 @@
         "name": "Psalm West",
         "image": "https://picsum.photos/200",
         "role": "Yeezy Designer",
-        "phone": "678-999-8212",
         "email": "psalmwest@kanye.com" 
       }
    
